@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import { hashHistory, Router, Route, IndexRoute } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import BasePage from './components/BasePage';
 import ParamsPage from './components/ParamsPage';
@@ -13,11 +14,12 @@ import ResultsPage from './components/ResultsPage';
 
 
 const store = configureStore();
+const history = syncHistoryWithStore(hashHistory, store);
 
 // Render the main component into the dom
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
+    <Router history={history}>
       <Route path="/" component={BasePage}>
         <IndexRoute component={ParamsPage}/>
         <Route path="sheet" component={SheetPage}/>

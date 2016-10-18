@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Experiment } from '../actions';
+import { push } from 'react-router-redux';
 
 class ParamsPage extends React.Component {
 
@@ -9,7 +10,7 @@ class ParamsPage extends React.Component {
     e.preventDefault();
 
     this.props.dispatch(Experiment.start(_.mapValues(this.refs, field => parseFloat(field.value))));
-    this.props.history.push('/sheet');
+    this.props.dispatch(push('/sheet'));
   }
 
   render() {
@@ -25,10 +26,7 @@ class ParamsPage extends React.Component {
 }
 
 ParamsPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  router: React.PropTypes.shape({
-    push: React.PropTypes.func.isRequired
-  }).isRequired
+  dispatch: PropTypes.func.isRequired
 }
 
 ParamsPage = connect()(ParamsPage);
