@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "reactTutorial",
+    "style": "less",
+    "postcss": true
+  }
+}

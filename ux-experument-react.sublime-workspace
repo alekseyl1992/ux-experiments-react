@@ -1,0 +1,1181 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Base",
+				"BasePage\t(index.js)"
+			],
+			[
+				"re",
+				"reference.png"
+			],
+			[
+				"repa",
+				"repairman_salary\t(Input.js)"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"ca",
+				"className"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"in",
+				"input\t(Input.js)"
+			],
+			[
+				"val",
+				"validators\t(reanimation_validator.cc)"
+			],
+			[
+				"get",
+				"get_urls"
+			],
+			[
+				"Browser",
+				"BrowserCriticalStatistics\t(statistics_service.cc)"
+			],
+			[
+				"brows",
+				"browser_statistics_"
+			],
+			[
+				"Br",
+				"BrowserStatistics"
+			],
+			[
+				"Stati",
+				"StatisticsSender"
+			],
+			[
+				"Brows",
+				"BrowserCriticalStatistics"
+			],
+			[
+				"Stat",
+				"StatisticsSender"
+			],
+			[
+				"m",
+				"message"
+			],
+			[
+				"filt",
+				"filtered"
+			],
+			[
+				"banned",
+				"bannedUsers\t(filter_messages.js)"
+			],
+			[
+				"filter",
+				"filter\t(filter_messages.js)"
+			],
+			[
+				"test",
+				"test_name"
+			],
+			[
+				"res",
+				"results\t(main.py)"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"require",
+				"requirejs"
+			],
+			[
+				"Net",
+				"NetConfigView"
+			],
+			[
+				"new",
+				"netConfigView"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"file",
+				"file_path"
+			],
+			[
+				"attach",
+				"attach_body\t(mail_sender.py)"
+			],
+			[
+				"Errr",
+				"ErrorField::TYPE\t(view_hierarchy_helper.cc)"
+			],
+			[
+				"Error",
+				"ErrorField::TYPE\t(view_hierarchy_helper.cc)"
+			],
+			[
+				"view",
+				"view_hierarchy"
+			],
+			[
+				"alig",
+				"vertical-align"
+			],
+			[
+				"amigo_",
+				"amigo_chrome_browser_unittests"
+			],
+			[
+				"a",
+				"amigo_chrome_unittests"
+			],
+			[
+				"print",
+				"println!\tprintln! …"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/components/ParamsPage.js",
+			"settings":
+			{
+				"buffer_size": 2052,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/BasePage.js",
+			"settings":
+			{
+				"buffer_size": 435,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/components/QuestionsPage.js",
+			"settings":
+			{
+				"buffer_size": 700,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/ResultsPage.js",
+			"settings":
+			{
+				"buffer_size": 224,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/SheetPage.js",
+			"settings":
+			{
+				"buffer_size": 489,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actions/index.js",
+			"settings":
+			{
+				"buffer_size": 236,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Test"
+				]
+			],
+			[
+				"Packages/Rust/Cargo.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Rust/Cargo.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust/Rust.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Rust/Rust.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 581.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"react",
+				"Set Syntax: React Templates"
+			],
+			[
+				"jsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"reforma",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packa ins",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"salt",
+				"Set Syntax: Salt State (SLS)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax ",
+				"Set Syntax Settings"
+			],
+			[
+				"MAT",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"set syntax: ",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"JSON",
+				"Set Syntax: JSON"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"p",
+				"Git: Push"
+			],
+			[
+				"jinj",
+				"Set Syntax: HTML (Jinja2)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"sets ji",
+				"Set Syntax: Jinja2"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"git",
+				"Git: Gui"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"For",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"INSTALL ",
+				"Package Control: Install Package"
+			],
+			[
+				"plugi",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 749.0
+	},
+	"console":
+	{
+		"height": 232.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Projects/Frontend/ux-experiment-react",
+		"/C/Projects/Frontend/ux-experiment-react/src",
+		"/C/Projects/Frontend/ux-experiment-react/src/actions",
+		"/C/Projects/Frontend/ux-experiment-react/src/components",
+		"/C/Projects/Frontend/ux-experiment-react/src/reducers",
+		"/C/Projects/Frontend/ux-experiment-react/src/store",
+		"/C/Projects/Frontend/ux-experiment-react/src/styles"
+	],
+	"file_history":
+	[
+		"/C/Projects/Frontend/ux-experiment-react/README.md",
+		"/C/Projects/Frontend/ux-experiment-react/package.json",
+		"/C/Projects/Frontend/ux-experiment-react/src/store/index.js",
+		"/C/Projects/Frontend/ux-experiment-react/src/components/BasePage.js",
+		"/C/Projects/Frontend/ux-experiment-react/src/styles/BasePage.css",
+		"/C/Projects/Frontend/ux-experiment-react/src/index.js",
+		"/C/Users/Alekseyl/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default (Windows).sublime-keymap",
+		"/C/Users/Alekseyl/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/C/Users/Alekseyl/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Projects/Frontend/ux-experiment-react/src/components/App.js",
+		"/C/Projects/Frontend/ux-experiment-react/ux-experument-react.sublime-project",
+		"/C/Projects/Frontend/ux-experiment-react/src/components/SheetPage.js",
+		"/C/Projects/Frontend/ux-experiment-react/src/components/QuestionsPage.js",
+		"/C/Projects/Frontend/ux-experiment-react/src/components/ParamsPage.js",
+		"/C/Projects/Frontend/ux-test-react/README.md",
+		"/C/Projects/Frontend/ux-test-react/package.json",
+		"/C/Projects/Java/storm/examples/storm-starter/multilang/resources/splitsentence.py",
+		"/C/Projects/Frontend/repairman-react/src/actions/index.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Output.js",
+		"/C/Projects/Frontend/repairman-react/src/config/base.js",
+		"/C/Projects/Frontend/repairman-react/src/config/README.md",
+		"/C/Projects/Frontend/repairman-react/src/styles/App.css",
+		"/C/Projects/Frontend/repairman-react/src/components/App.js",
+		"/C/Projects/Frontend/repairman-react/cfg/base.js",
+		"/C/Projects/Frontend/repairman-react/webpack.config.js",
+		"/C/Projects/Frontend/repairman-react/cfg/defaults.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Input.js",
+		"/C/Projects/Frontend/repairman-react/src/reducers/index.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Footer.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Reference.js",
+		"/C/Projects/Frontend/repairman-react/package.json",
+		"/C/Projects/Frontend/repairman-react/src/index.html",
+		"/C/Projects/Frontend/repairman-react/src/reducers/articles.js",
+		"/C/Projects/Frontend/repairman-react/src/reducers/todos.js",
+		"/C/Projects/Frontend/repairman-react/src/actions/README.md",
+		"/C/Projects/Frontend/repairman-react/src/components/Button.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Header.js",
+		"/C/Projects/Frontend/repairman-react/src/index.js",
+		"/C/Projects/Frontend/repairman-react/src/components/Base.js",
+		"/C/Projects/Frontend/repairman-react/src/components/About.js",
+		"/C/Projects/Python/hawk/app/services/api.js",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/statistics_service.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/browser_statistics.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/statistics_service.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/browser_statistics.cc",
+		"/E/Projects/amigo_browser_38/src/chrome/browser/importer/importer_uma.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/amigo_statistics_browsertests.gypi",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/BUILD.gn",
+		"/D/MailCloud/Магистр/Пост_Курсач/sources/iu5.9sem.asoiiu.kyrs.var2-remontnikp[2015]/╨╝╨╛╨┤╨╡╨╗╤М ╤А╨╡╨╝╨╛╨╜╤В╨╜╨╕╨║╨░/.git/logs/HEAD",
+		"/D/MailCloud/Магистр/Пост_Курсач/sources/iu5.9sem.asoiiu.kyrs.var2-remontnikp[2015]/╨╝╨╛╨┤╨╡╨╗╤М ╤А╨╡╨╝╨╛╨╜╤В╨╜╨╕╨║╨░/.git/logs/refs/heads/master",
+		"/E/Projects/amigo_browser_38/src/chrome/browser/chrome_browser_main.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/user_activity_browsertest.cc",
+		"/E/Projects/amigo_browser_38/src/chrome/browser/amigo/amigo_reanimation.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/constants.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/reanimation_validator.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/statistics_browsertest.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/reanimation_browsertest.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/window_state_validator.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/extension_validator.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/crash_kill_validator.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/validators.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/tests/tests_framework/validators/basic_validator.h",
+		"/C/Users/Alekseyl/Desktop/example.html",
+		"/C/Projects/Python/eagle/install_spark.bat",
+		"/E/Projects/amigo_browser_38/src/chrome/browser/metrics/metrics_service_browsertest.cc",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/statistics_sender.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/browser_critical_statistics.cc",
+		"/E/Projects/amigo_browser_38/src/url/gurl.h",
+		"/E/Projects/amigo_browser_38/src/ui/compositor/dip_util.cc",
+		"/C/Users/Alekseyl/Desktop/stack_trace.log",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/browser_critical_statistics.h",
+		"/C/Users/Alekseyl/AppData/Roaming/Sublime Text 3/Packages/User/Ninja Build.sublime-build",
+		"/E/Projects/amigo_browser_38/src/chrome/browser/ui/views/sad_tab_view.h",
+		"/C/Users/Alekseyl/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/mock_statistics_service.h",
+		"/E/Projects/amigo_browser_38/src/amigo/amigolib/statistics/statistics_sender.cc",
+		"/c/users/alekseyl/appdata/local/temp/rsub-_gxfdf/tester.sls",
+		"/E/Projects/amigo_browser_38/build.txt",
+		"/C/Program Files (x86)/Windows Kits/10/Include/10.0.10586.0/shared/sal.h",
+		"/D/temp/sql_corpus.txt",
+		"/E/Projects/amigo_buildbot/master/tester/tester.py",
+		"/E/Projects/amigo_buildbot/master/builder/builder.py",
+		"/E/Projects/amigo_buildbot/master/smtplib_mail_notifier.py",
+		"/D/MailCloud/Магистр/anti_cheat/input/banned_users.py",
+		"/D/MailCloud/Магистр/anti_cheat/input/std.out.filtered1",
+		"/D/MailCloud/Магистр/anti_cheat/input/std.out.filtered2",
+		"/C/Users/Alekseyl/Desktop/logs/parse.pl",
+		"/C/Users/Alekseyl/Desktop/logs/std.out",
+		"/C/Users/Alekseyl/Desktop/logs/banned_users.txt",
+		"/C/Users/Alekseyl/Desktop/logs/std.out.filtered2",
+		"/C/Users/Alekseyl/Desktop/logs/std.out.filtered1",
+		"/C/Users/Alekseyl/Desktop/logs/std.out.2",
+		"/E/Projects/amigo_buildbot/tester/scripts/tests_log_parser/json_parser.py",
+		"/E/Projects/amigo_buildbot/tester/scripts/tests_log_parser/templates/report.html",
+		"/C/Users/Alekseyl/Desktop/browser_tests.json",
+		"/E/Projects/amigo_buildbot/tester/scripts/tests_log_parser/html_renderer.py",
+		"/D/MailCloud/Магистр/anti_cheat/concat/input/log2.txt",
+		"/D/MailCloud/Магистр/anti_cheat/concat/input/log1.txt",
+		"/D/MailCloud/Магистр/anti_cheat/concat/input/game2_fast.txt",
+		"/D/MailCloud/Магистр/anti_cheat/concat/input/game3_fast.txt",
+		"/E/Projects/amigo_buildbot/master/tester/filters/browser_tests.py",
+		"/E/Projects/amigo_buildbot/.gitlab-ci.yml",
+		"/c/users/alekseyl/appdata/local/temp/rsub-rl9yze/.profile",
+		"/c/users/alekseyl/appdata/local/temp/rsub-qluwz0/.bashrc",
+		"/c/users/alekseyl/appdata/local/temp/rsub-0hyie6/.bash_profile",
+		"/C/Python27/Lib/site-packages/buildbot/util/sautils.py",
+		"/C/Python27/Lib/site-packages/buildbot/db/model.py",
+		"/C/Python27/Lib/site-packages/buildbot/db/workers.py",
+		"/c/users/alekseyl/appdata/local/temp/rsub-9chm6m/my.cnf",
+		"/E/Projects/amigo_buildbot/master/server_config.sample.py",
+		"/C/Users/Alekseyl/Desktop/new.sql",
+		"/C/Users/Alekseyl/Desktop/cleaned_dump.sql",
+		"/c/users/alekseyl/appdata/local/temp/rsub-hxjfy7/master.py",
+		"/c/users/alekseyl/appdata/local/temp/rsub-lur_ak/data.sql",
+		"/c/users/alekseyl/appdata/local/temp/rsub-3ffakj/schema.sql",
+		"/C/Users/Alekseyl/Desktop/dump.sql",
+		"/E/Projects/amigo_buildbot/gitlab_ci/test.sh",
+		"/E/Projects/amigo_buildbot/master/master.py",
+		"/c/users/alekseyl/appdata/local/temp/rsub-tovowf/master.py",
+		"/c/users/alekseyl/appdata/local/temp/rsub-ogfbpf/.bash_profile",
+		"/E/Projects/amigo_buildbot/master/master.cfg.sample",
+		"/c/users/alekseyl/appdata/local/temp/rsub-3rw9fd/.bash_profile",
+		"/c/users/alekseyl/appdata/local/temp/rsub-pairj_/.bash_profile",
+		"/C/Users/Alekseyl/Envs/bb_test/Lib/site-packages/buildbot/steps/worker.py",
+		"/D/MailCloud/МАМИ/generate/algo/questions.py",
+		"/D/MailCloud/МАМИ/generate/algo/generate.py",
+		"/D/MailCloud/МАМИ/generate/.gitignore",
+		"/D/MailCloud/МАМИ/generate/algo/Miami.RK.txt"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			"",
+			"chrome/browser/importer*.h",
+			"*.h",
+			"*.cc",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Output",
+			"Reference",
+			"Input",
+			"App",
+			"CLUSTER_CONF_DIR",
+			"log4j.rootLogger=DEBUG, CONSOLE, ROLLINGFILE ",
+			"decimalPlaces",
+			"AddTodo",
+			" {",
+			"$scope",
+			"ADD_TODO",
+			"input",
+			"name",
+			"\"",
+			"Footer",
+			"AppComponent",
+			"Footer",
+			"name",
+			")',\n",
+			"paramLabel",
+			"paramName",
+			"',\n",
+			"import",
+			"cards_list",
+			"cards/list",
+			"ws.",
+			"ws.list",
+			"OnImport",
+			"ImporterType",
+			"namespace importer",
+			"  ",
+			"CheckHistory",
+			"AmigoReanimation",
+			"AmigoReanimation ",
+			" OnReanimationShowed",
+			"MAILRU",
+			"\\n",
+			"ENV (\\S+) ",
+			"ENV (\\s+) ",
+			"statistics",
+			"statistics_sender_",
+			"GetIns",
+			"ctrl+p",
+			"StatisticsSender::GetInstance()",
+			"GetIns",
+			"BrowserCriticalStatistics::GetInstance()",
+			"BrowserStatistics::GetInstance()",
+			"browser_statistics_()",
+			"BrowserCriticalStatistics::GetInstance()",
+			";\n",
+			"        ",
+			"True",
+			"\\n",
+			" +",
+			"\\n",
+			" +",
+			" ",
+			"‑",
+			"_USING_V110_SDK71_",
+			"inc",
+			"à¨¬¥ç ­.*\\n",
+			"\\n",
+			"http",
+			"AppListServiceImplBrowserTest.DeletingProfileUpdatesViewDelegate",
+			"\\n",
+			"5\\n",
+			"  ",
+			"\\| ",
+			"\\s+|\\n",
+			"\"",
+			"'",
+			"\\n\\n",
+			"slave",
+			"CREATE",
+			"}",
+			"{",
+			"\\n",
+			" +",
+			"\\s+",
+			"\\t",
+			",",
+			"CompositeStepMixin",
+			"np",
+			"\n    ",
+			"(\\d+\\.\\s)(.*)\\n",
+			"(\\d+\\.\\s)(.*)",
+			"_",
+			"p_",
+			"p",
+			"Q",
+			"p_",
+			"* ",
+			"2* ",
+			"П",
+			"OAB",
+			"  ",
+			"    ",
+			"mu",
+			"print",
+			" ",
+			"\\n",
+			";( +)",
+			";(\\s+)",
+			";(\\S+)",
+			")\n",
+			"pi",
+			"e(-\\d+)",
+			"pi",
+			"E(-\\d+)",
+			"start",
+			"\"",
+			"save_last_error",
+			" ",
+			"test",
+			".",
+			"}}",
+			"{{",
+			"S3",
+			"\"",
+			"BuildSlave",
+			"\"),\n",
+			"}}",
+			"{{",
+			"\"]))\n",
+			"installed",
+			"\"]))\n",
+			"AMIGO_REPLACE_MEMBER_FUN",
+			"AMIGO_REPLACE_MEMBER_FUN_DECL"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Input",
+			"params",
+			"output",
+			"'",
+			"\\n",
+			"export $1=",
+			"statistics_sender_",
+			"browser_critical_statistics_",
+			"browser_statistics_",
+			"    ",
+			"1",
+			"",
+			" ",
+			"|",
+			"-",
+			"",
+			"+",
+			"",
+			" ",
+			"\\\"",
+			"\"",
+			"],",
+			", ",
+			".",
+			"u\"\"\"$2\"\"\",\\n",
+			"\"$1\",\\n",
+			"\"$1\",",
+			"",
+			"r",
+			"q",
+			"R",
+			"q",
+			"e ",
+			"2e",
+			"Q",
+			"B",
+			"A",
+			"\\t",
+			"kg",
+			"\\tlog",
+			"\\t",
+			", ",
+			";",
+			"π",
+			"*10^$1",
+			"π",
+			"*10^$1",
+			"'",
+			"', '",
+			", ",
+			"",
+			" }}",
+			"{{ ",
+			"'",
+			"]]",
+			"[[",
+			"",
+			"::=",
+			"AMIGO_MEMBER_FUN_IMPL",
+			"AMIGO_OVERLOAD",
+			"AMIGO_EMPTY",
+			"AMIGO_MAILRU_OVERLOAD",
+			"",
+			"?\\r\\n",
+			"?\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/components/ParamsPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2052,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1895,
+								1895
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/BasePage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 435,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								291,
+								291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/components/QuestionsPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								413,
+								413
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/ResultsPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/SheetPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/actions/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 260.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 174.0
+	},
+	"pinned_build_system": "Packages/User/Ninja Build.sublime-build",
+	"project": "ux-experument-react.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"appcss",
+				"src\\styles\\App.css"
+			],
+			[
+				"app.css",
+				"src\\styles\\App.css"
+			],
+			[
+				"amiran",
+				"chrome\\browser\\amigo\\amigo_reanimation.cc"
+			],
+			[
+				"amigorean",
+				"chrome\\browser\\amigo\\amigo_reanimation.cc"
+			],
+			[
+				"reanim",
+				"amigo\\amigolib\\statistics\\tests\\reanimation_browsertest.cc"
+			],
+			[
+				"amigo_rea",
+				"chrome\\browser\\amigo\\amigo_reanimation.h"
+			],
+			[
+				"gurl",
+				"url\\gurl.h"
+			],
+			[
+				"statservice",
+				"amigo\\amigolib\\statistics\\statistics_service.h"
+			],
+			[
+				"stati",
+				"amigo\\amigolib\\statistics\\statistics_service.cc"
+			],
+			[
+				"metrics_browsertest",
+				"chrome\\browser\\metrics\\metrics_service_browsertest.cc"
+			],
+			[
+				"dip_util.cc",
+				"ui\\compositor\\dip_util.cc"
+			],
+			[
+				"sad_tab_view",
+				"chrome\\browser\\ui\\views\\sad_tab_view.h"
+			],
+			[
+				"browser_stat",
+				"amigo\\amigolib\\statistics\\browser_statistics.h"
+			],
+			[
+				"browser_critical_statistics",
+				"amigo\\amigolib\\statistics\\browser_critical_statistics.h"
+			],
+			[
+				"",
+				"C:\\Users\\Alekseyl\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\Ninja Build.sublime-build"
+			],
+			[
+				"statistics_se.h",
+				"amigo\\amigolib\\statistics\\statistics_service.h"
+			],
+			[
+				"statistics_ser",
+				"amigo\\amigolib\\statistics\\statistics_service.cc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 363.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

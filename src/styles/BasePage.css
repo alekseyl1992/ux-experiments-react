@@ -1,0 +1,22 @@
+/* Base Application Styles */
+
+body {
+  font-size: 2em;
+}
+
+.form-control {
+  font-size: 1em;
+}
+
+.btn {
+  font-size: 1em;
+}
+
+.b-footer {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: right;
+}
