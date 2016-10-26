@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 
 class SheetPage extends React.Component {
   render() {
@@ -13,15 +12,5 @@ class SheetPage extends React.Component {
 
 SheetPage.propTypes = {
 };
-
-const mapStateToProps = (state) => {
-  return {};
-}
-
-const mapDispatchToProps = () => {
-  return {};
-}
-
-SheetPage = connect(mapStateToProps, mapDispatchToProps)(SheetPage);
 
 export default SheetPage;

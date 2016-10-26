@@ -1,7 +1,3 @@
-window.jQuery = require('jquery');
-require('bootstrap-webpack');
-require('normalize.css');
-require('styles/BasePage.css');
 import React, { PropTypes } from 'react';
 
 class BasePage extends React.Component {
