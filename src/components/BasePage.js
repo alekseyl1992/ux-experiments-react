@@ -5,7 +5,6 @@ class BasePage extends React.Component {
     return (
       <div className="b-container">
         <div className="container-fluid">
-          <h1>Базовая страница</h1>
           {this.props.children}
         </div>
       </div>

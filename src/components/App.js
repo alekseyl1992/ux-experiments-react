@@ -4,6 +4,7 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import _ from 'lodash';
 
 import { hashHistory, Router, Route, IndexRoute } from 'react-router';
 
@@ -13,20 +14,17 @@ import ExperimentPage from 'components/ExperimentPage';
 import QuestionsPage from 'components/QuestionsPage';
 import ResultsPage from 'components/ResultsPage';
 
-function wrapper(renderer) {
-  return class Wrapper extends React.Component {
-    render() {
-      return renderer();
-    }
-  };
-}
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      schemes: []
+      schemes: [],
+      params: {
+        colorsPerScheme: 3,
+        exposureTime: 5
+      }
     };
 
     this.routes = null;
@@ -35,22 +33,28 @@ class App extends React.Component {
   componentWillMount() {
     this.routes = (
       <Route path="/" component={BasePage}>
-        <IndexRoute component={wrapper(this.renderParamsPage.bind(this))} />
-        <Route path="experiment" component={wrapper(this.renderExperimentPage.bind(this))} />
-        <Route path="questions" component={wrapper(this.renderQuestionsPage.bind(this))} />
-        <Route path="results" component={wrapper(this.renderResultsPage.bind(this))} />
+        <IndexRoute component={this.renderParamsPage.bind(this)} />
+        <Route path="experiment" component={this.renderExperimentPage.bind(this)} />
+        <Route path="questions" component={this.renderQuestionsPage.bind(this)} />
+        <Route path="results" component={this.renderResultsPage.bind(this)} />
       </Route>
     );
+
+    this.addScheme();
   }
 
   startExperiment(params) {
     hashHistory.push('/experiment');
   }
 
-  addScheme(colorsCount) {
+  randomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  }
+
+  addScheme() {
     var scheme = {
       key: _.uniqueId(),
-      colors: _.fill(Array(colorsCount), 'white'),
+      colors: _.fill(Array(this.state.params.colorsPerScheme), 0).map(this.randomColor.bind(this))
     };
 
     this.state.schemes.push(scheme);
@@ -58,7 +62,6 @@ class App extends React.Component {
     this.setState({
       schemes: this.state.schemes
     });
-    debugger;
   }
 
   removeScheme(scheme) {
@@ -69,25 +72,39 @@ class App extends React.Component {
     });
   }
 
-  renderParamsPage() {
-    return (
-      <ParamsPage
-        {...this.state}
-        colorsPerScheme="3"
-        onStartExperiment={this.startExperiment.bind(this)}
-        onAddScheme={this.addScheme.bind(this)}
-        onRemoveScheme={this.removeScheme.bind(this)} />
-    );
+  updateScheme(scheme, colorId, colorValue) {
+    scheme.colors[colorId] = colorValue.hex;
+  }
+
+  updateParams(params) {
+    var schemes = this.state.schemes.map(scheme => {
+      while (params.colorsPerScheme > scheme.colors.length) {
+        scheme.colors.push(this.randomColor());
+      }
+
+      if (params.colorsPerScheme < scheme.colors.length) {
+        scheme.colors = _.slice(scheme.colors, 0, params.colorsPerScheme);
+      }
+
+      return scheme;
+    });
+
+    this.setState({
+      params,
+      schemes
+    });
   }
 
   renderParamsPage() {
     return (
       <ParamsPage
         {...this.state}
-        colorsPerScheme="3"
         onStartExperiment={this.startExperiment.bind(this)}
         onAddScheme={this.addScheme.bind(this)}
-        onRemoveScheme={this.removeScheme.bind(this)} />
+        onRemoveScheme={this.removeScheme.bind(this)}
+        onUpdateScheme={this.updateScheme.bind(this)}
+        onUpdateParams={this.updateParams.bind(this)}
+      />
     );
   }
 
