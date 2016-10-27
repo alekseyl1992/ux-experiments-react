@@ -95,6 +95,24 @@ class App extends React.Component {
     });
   }
 
+  generateSheet(colorsCount, rowsCount, colsCount) {
+    var colsCount = 5;
+    var rowsCount = 20;
+
+    var data = [{
+      row: ['Иванов', 25, 25, 25, 25, 100, 5],
+      colorId: 0
+    }, {
+      row: ['Иванов', 25, 25, 25, 25, 100, 5],
+      colorId: 0
+    }, {
+      row: ['Иванов', 25, 25, 25, 25, 100, 5],
+      colorId: 0
+    }];
+
+    return data;
+  }
+
   renderParamsPage() {
     return (
       <ParamsPage
