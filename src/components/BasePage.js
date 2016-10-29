@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 class BasePage extends React.Component {
   render() {
@@ -11,8 +11,5 @@ class BasePage extends React.Component {
     );
   }
 }
-
-BasePage.defaultProps = {
-};
 
 export default BasePage;

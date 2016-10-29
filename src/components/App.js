@@ -21,13 +21,21 @@ class App extends React.Component {
 
     this.state = {
       schemes: [],
-      currentScheme: null,
       params: {
         colorsPerScheme: 3,
         rowsCount: 20,
-        exposureTime: 5
+        exposureTime: 5,
+        repeatCount: 1
       },
-      sheet: null
+      questions: {
+        counts: [],
+        colors: []
+      },
+      current: {
+        schemeId: 0,
+        iteration: 0,
+        sheet: null
+      }
     };
 
     this.routes = null;
@@ -44,15 +52,66 @@ class App extends React.Component {
     );
 
     this.addScheme();
+    this.addScheme();
   }
 
   startExperiment() {
+    const questions = {
+      counts: [],
+      colors: []
+    };
+
+    this.setState({ questions });
+
+    this.experimentIteration(0, 0);
+  }
+
+  experimentIteration(iteration, schemeId) {
     const params = this.state.params;
     const sheet = this.generateSheet(params.rowsCount, params.colorsPerScheme);
-    const currentScheme = this.state.schemes[0];
-    this.setState({ sheet, currentScheme });
+
+    this.setState({
+      current: {
+        iteration,
+        schemeId,
+        sheet: sheet
+      }
+    });
 
     hashHistory.push('/experiment');
+
+    window.setTimeout(() => {
+      hashHistory.push('/questions');
+    }, this.state.params.exposureTime * 1000);
+  }
+
+  answer(data) {
+    if (this.state.current.schemeId + 1 < this.state.schemes.length) {
+      // new scheme, same iteration
+      ++this.state.current.schemeId;
+      this.setState({ current });
+
+      hashHistory.push('/experiment');
+    } else if (this.state.current.iteration + 1 < this.state.repeatCount) {
+      // next iteration, first scheme
+      this.state.current.schemeId = 0;
+      ++this.state.current.iteration;
+      this.setState({ current });
+
+      hashHistory.push('/experiment');
+    } else {
+      // end of experiment
+      hashHistory.push('/results');
+    }   
+  }
+
+  appendQuestions(counts, colors) {
+    this.state.questions.counts = _.concat(this.state.questions.counts, counts);
+    this.state.questions.colors = _.concat(this.state.questions.colors, colors);
+
+    this.setState({
+      questions: this.state.questions
+    });
   }
 
   randomColor() {
@@ -155,6 +214,8 @@ class App extends React.Component {
     return (
       <QuestionsPage
         {...this.state}
+        onAnswer={this.answer.bind(this)}
+        appendQuestions={this.appendQuestions.bind(this)}
       />
     );
   }
@@ -226,7 +287,7 @@ App.surnames = [
   'Гаврилов',
   'Антонов',
   'Ефимов',
-  'Леонтьев',
+  'Леонтьев',  // here I am
   'Давыдов',
   'Гусев',
   'Данилов',

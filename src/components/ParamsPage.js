@@ -1,6 +1,5 @@
-import React, { PropTypes } from 'react';
-import _ from 'lodash';
-import { SketchPicker } from 'react-color';
+import React from 'react';
+import { ChromePicker } from 'react-color';
 
 class ParamsPage extends React.Component {
   onStartExperiment(e) {
@@ -28,7 +27,8 @@ class ParamsPage extends React.Component {
     this.props.onUpdateParams({
       colorsPerScheme: parseInt(this.refs.colorsPerScheme.value),
       rowsCount: parseInt(this.refs.rowsCount.value),
-      exposureTime: parseFloat(this.refs.exposureTime.value)
+      exposureTime: parseFloat(this.refs.exposureTime.value),
+      repeatCount: parseFloat(this.refs.repeatCount.value)
     });
   }
 
@@ -38,9 +38,9 @@ class ParamsPage extends React.Component {
     const columnClass = 'col-md-' + columnSize;
 
     const schemes = this.props.schemes.map(scheme => {
-      let pickers = scheme.colors.map((color, key) => 
+      let pickers = scheme.colors.map((color, key) =>
         <div className={columnClass} key={key}>
-          <SketchPicker
+          <ChromePicker
             color={color}
             onChange={this.onColorChanged.bind(this, scheme, key)} />
         </div>
@@ -74,14 +74,14 @@ class ParamsPage extends React.Component {
             </div>
           </div>
           <div className="form-group">
-          <label htmlFor="rowsCount" className="col-sm-2 control-label">Количество строк</label>
-          <div className="col-sm-10">
-            <input ref="rowsCount"
-                   type="number"
-                   className="form-control"
-                   id="rowsCount"
-                   defaultValue={this.props.params.rowsCount} />
-          </div>
+            <label htmlFor="rowsCount" className="col-sm-2 control-label">Количество строк</label>
+            <div className="col-sm-10">
+              <input ref="rowsCount"
+                     type="number"
+                     className="form-control"
+                     id="rowsCount"
+                     defaultValue={this.props.params.rowsCount} />
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="exposureTime" className="col-sm-2 control-label">Время показа (сек.)</label>
@@ -91,6 +91,16 @@ class ParamsPage extends React.Component {
                      className="form-control"
                      id="exposureTime"
                      defaultValue={this.props.params.exposureTime} />
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="repeatCount" className="col-sm-2 control-label">Количество повторов</label>
+            <div className="col-sm-10">
+              <input ref="repeatCount"
+                     type="number"
+                     className="form-control"
+                     id="repeatCount"
+                     defaultValue={this.props.params.repeatCount} />
             </div>
           </div>
           <div className="form-group">
@@ -113,11 +123,6 @@ class ParamsPage extends React.Component {
       </div>
     )
   }
-}
-
-ParamsPage.propTypes = {
-  schemes: PropTypes.array.isRequired,
-  onStartExperiment: PropTypes.func.isRequired
 }
 
 export default ParamsPage;

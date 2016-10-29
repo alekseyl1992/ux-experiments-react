@@ -1,13 +1,14 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 class SheetPage extends React.Component {
   render() {
-    const rows = this.props.sheet.map((row, rowId) => {
+    const rows = this.props.current.sheet.map((row, rowId) => {
       const cols = row.row.map((value, colId) => {
         return <td key={colId}>{value}</td>;
       });
 
-      const color = this.props.currentScheme.colors[row.colorId];
+      const currentScheme = this.props.schemes[this.props.current.schemeId];
+      const color = currentScheme.colors[row.colorId];
       const style = {
         backgroundColor: color
       };
@@ -17,7 +18,7 @@ class SheetPage extends React.Component {
 
     return (
       <div className="b-sheet-page well text-center">
-        <h2>Экспериментальная страница</h2>
+        <h2>Страница эксперимента</h2>
         <table className="table">
           <tbody>
             {rows}
@@ -27,8 +28,5 @@ class SheetPage extends React.Component {
     );
   }
 }
-
-SheetPage.propTypes = {
-};
 
 export default SheetPage;
