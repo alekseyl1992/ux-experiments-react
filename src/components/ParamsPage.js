@@ -5,8 +5,7 @@ import { SketchPicker } from 'react-color';
 class ParamsPage extends React.Component {
   onStartExperiment(e) {
     e.preventDefault();
-
-    this.props.onStartExperiment(_.mapValues(this.refs, field => parseFloat(field.value)));
+    this.props.onStartExperiment();
   }
 
   onAddScheme(e) {
@@ -28,6 +27,7 @@ class ParamsPage extends React.Component {
 
     this.props.onUpdateParams({
       colorsPerScheme: parseInt(this.refs.colorsPerScheme.value),
+      rowsCount: parseInt(this.refs.rowsCount.value),
       exposureTime: parseFloat(this.refs.exposureTime.value)
     });
   }
@@ -72,6 +72,16 @@ class ParamsPage extends React.Component {
                      id="colorsPerScheme"
                      defaultValue={this.props.params.colorsPerScheme} />
             </div>
+          </div>
+          <div className="form-group">
+          <label htmlFor="rowsCount" className="col-sm-2 control-label">Количество строк</label>
+          <div className="col-sm-10">
+            <input ref="rowsCount"
+                   type="number"
+                   className="form-control"
+                   id="rowsCount"
+                   defaultValue={this.props.params.rowsCount} />
+          </div>
           </div>
           <div className="form-group">
             <label htmlFor="exposureTime" className="col-sm-2 control-label">Время показа (сек.)</label>

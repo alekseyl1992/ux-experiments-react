@@ -21,10 +21,13 @@ class App extends React.Component {
 
     this.state = {
       schemes: [],
+      currentScheme: null,
       params: {
         colorsPerScheme: 3,
+        rowsCount: 20,
         exposureTime: 5
-      }
+      },
+      sheet: null
     };
 
     this.routes = null;
@@ -43,7 +46,12 @@ class App extends React.Component {
     this.addScheme();
   }
 
-  startExperiment(params) {
+  startExperiment() {
+    const params = this.state.params;
+    const sheet = this.generateSheet(params.rowsCount, params.colorsPerScheme);
+    const currentScheme = this.state.schemes[0];
+    this.setState({ sheet, currentScheme });
+
     hashHistory.push('/experiment');
   }
 
@@ -95,20 +103,29 @@ class App extends React.Component {
     });
   }
 
-  generateSheet(colorsCount, rowsCount, colsCount) {
-    var colsCount = 5;
-    var rowsCount = 20;
+  generateSheet(rowsCount, colorsCount) {
+    let data = [];
 
-    var data = [{
-      row: ['Иванов', 25, 25, 25, 25, 100, 5],
-      colorId: 0
-    }, {
-      row: ['Иванов', 25, 25, 25, 25, 100, 5],
-      colorId: 0
-    }, {
-      row: ['Иванов', 25, 25, 25, 25, 100, 5],
-      colorId: 0
-    }];
+    for (let i = 0; i < rowsCount; ++i) {
+      let name = App.surnames[_.random(App.surnames.length - 1)] + ' ' +
+          App.names[_.random(App.names.length - 1)];
+
+      let scores = [
+        _.random(0, 25),
+        _.random(0, 25),
+        _.random(0, 25),
+        _.random(0, 25)
+      ];
+
+      let sum = _.sum(scores);
+
+      let row = {
+        row: [name, ...scores, sum],
+        colorId: Math.floor(sum / 100 * colorsCount)
+      };
+
+      data.push(row);
+    }
 
     return data;
   }
@@ -128,19 +145,25 @@ class App extends React.Component {
 
   renderExperimentPage() {
     return (
-      <ExperimentPage />
+      <ExperimentPage 
+        {...this.state}
+      />
     );
   }
 
   renderQuestionsPage() {
     return (
-      <QuestionsPage />
+      <QuestionsPage
+        {...this.state}
+      />
     );
   }
 
   renderResultsPage() {
     return (
-      <ResultsPage />
+      <ResultsPage
+        {...this.state}
+      />
     );
   }
 
@@ -152,6 +175,143 @@ class App extends React.Component {
       );
   }
 }
+
+App.surnames = [
+  'Васильев',
+  'Петров',
+  'Смирнов',
+  'Михайлов',
+  'Фёдоров',
+  'Соколов',
+  'Яковлев',
+  'Попов',
+  'Андреев',
+  'Алексеев',
+  'Александров',
+  'Лебедев',
+  'Григорьев',
+  'Степанов',
+  'Семёнов',
+  'Павлов',
+  'Богданов',
+  'Николаев',
+  'Дмитриев',
+  'Егоров',
+  'Волков',
+  'Кузнецов',
+  'Никитин',
+  'Соловьёв',
+  'Тимофеев',
+  'Орлов',
+  'Афанасьев',
+  'Филиппов',
+  'Сергеев',
+  'Захаров',
+  'Матвеев',
+  'Виноградов',
+  'Кузьмин',
+  'Максимов',
+  'Козлов',
+  'Ильин',
+  'Герасимов',
+  'Марков',
+  'Новиков',
+  'Морозов',
+
+  'Романов',
+  'Осипов',
+  'Макаров',
+  'Зайцев',
+  'Беляев',
+  'Гаврилов',
+  'Антонов',
+  'Ефимов',
+  'Леонтьев',
+  'Давыдов',
+  'Гусев',
+  'Данилов',
+  'Киселёв',
+  'Сорокин',
+  'Тихомиров',
+  'Крылов',
+  'Никифоров',
+  'Кондратьев',
+  'Кудрявцев',
+  'Борисов',
+  'Жуков',
+  'Воробьёв',
+  'Щербаков',
+  'Поляков',
+  'Савельев',
+  'Шмидт',
+  'Трофимов',
+  'Чистяков',
+  'Баранов',
+  'Сидоров',
+  'Соболев',
+  'Карпов',
+  'Белов',
+  'Миллер',
+  'Титов',
+  'Львов',
+  'Фролов',
+  'Игнатьев',
+  'Комаров',
+  'Прокофьев',
+  'Быков',
+  'Абрамов',
+  'Голубев',
+  'Пономарёв',
+  'Покровский',
+  'Мартынов',
+  'Кириллов',
+  'Шульц',
+  'Миронов',
+  'Фомин',
+  'Власов',
+  'Троицкий',
+  'Федотов',
+  'Назаров',
+  'Ушаков',
+
+  'Денисов',
+  'Константинов',
+  'Воронин',
+  'Наумов'
+];
+
+App.names = [
+  'Александр',
+  'Сергей',
+  'Владимир',
+  'Андрей',
+  'Алексей',
+  'Дмитрий',
+  'Николай',
+  'Евгений',
+  'Михаил',
+  'Юрий',
+  'Виктор',
+  'Иван',
+  'Игорь',
+  'Анатолий',
+  'Максим',
+  'Олег',
+  'Павел',
+  'Валерий',
+  'Константин',
+  'Вячеслав',
+  'Василий',
+  'Денис',
+  'Антон',
+  'Илья',
+  'Виталий',
+  'Роман',
+  'Никита',
+  'Леонид',
+  'Геннадий',
+  'Владислав'
+];
 
 App.defaultProps = {
 };

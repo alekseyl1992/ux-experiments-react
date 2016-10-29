@@ -2,21 +2,15 @@ import React, { PropTypes } from 'react';
 
 class SheetPage extends React.Component {
   render() {
-    var colsCount = 5;
-    var rowsCount = 20;
-
-    var data = [
-      ['Иванов', 25, 25, 25, 25, 100, 5],
-      ['Иванов', 25, 25, 25, 25, 100, 5],
-      ['Иванов', 25, 25, 25, 25, 100, 5]
-    ];
-
-    var rows = data.map(row, rowId => {
-      var cols = col.map(value, colId => {
+    const rows = this.props.sheet.map((row, rowId) => {
+      const cols = row.row.map((value, colId) => {
         return <td key={colId}>{value}</td>;
       });
 
-      var score = row[row.length - 1];
+      const color = this.props.currentScheme.colors[row.colorId];
+      const style = {
+        backgroundColor: color
+      };
 
       return <tr key={rowId} style={style}>{cols}</tr>;
     });
@@ -25,7 +19,9 @@ class SheetPage extends React.Component {
       <div className="b-sheet-page well text-center">
         <h2>Экспериментальная страница</h2>
         <table className="table">
-          {rows}
+          <tbody>
+            {rows}
+          </tbody>
         </table>
       </div>
     );
