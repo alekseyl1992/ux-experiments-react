@@ -14,6 +14,8 @@ import ExperimentPage from 'components/ExperimentPage';
 import QuestionsPage from 'components/QuestionsPage';
 import ResultsPage from 'components/ResultsPage';
 
+import { subsampleObject } from 'utils';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -89,20 +91,59 @@ class App extends React.Component {
     if (this.state.current.schemeId + 1 < this.state.schemes.length) {
       // new scheme, same iteration
       ++this.state.current.schemeId;
-      this.setState({ current });
+      this.setState({ current: this.state.current });
 
       hashHistory.push('/experiment');
     } else if (this.state.current.iteration + 1 < this.state.repeatCount) {
       // next iteration, first scheme
       this.state.current.schemeId = 0;
       ++this.state.current.iteration;
-      this.setState({ current });
+      this.setState({ current: this.state.current });
 
       hashHistory.push('/experiment');
     } else {
       // end of experiment
       hashHistory.push('/results');
     }   
+  }
+
+  createQuestions() {
+    let colorsToCountsMap = {};
+    let nameToColorMap = {};
+
+    let sheet = this.props.current.sheet;
+    sheet.forEach((row, rowId) => {
+      let colorId = row.colorId;
+      if (colorId in colorsToCountsMap)
+        ++colorsToCountsMap[colorId];
+      else
+        colorsToCountsMap[colorId] = 1;
+
+      let name = row.row[0];
+      nameToColorMap[name] = colorId;
+    });
+
+    // количественные оценки
+    let counts = [];
+    _.forEach(colorsToCountsMap, (color, count) => {
+      counts.push({
+        color: color,
+        actualAnswer: null,
+        rightAnswer: count
+      });
+    });
+
+    // качественные оценки
+    let colorsQuestionsCount = 10;
+    let colors = _.map(subsampleObject(nameToColorMap, colorsQuestionsCount), (name, colorId) => {
+      return {
+        name: name,
+        actualAnswer: null,
+        rightAnswer: colorId
+      };
+    });
+
+    this.appendQuestions(counts, colors);
   }
 
   appendQuestions(counts, colors) {
