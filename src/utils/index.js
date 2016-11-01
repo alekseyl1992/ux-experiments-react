@@ -7,7 +7,7 @@ export function subsampleObject(obj, count) {
   let result = {};
 
   while (_.size(result) < count) {
-    const id = _.random(objSize);
+    const id = _.random(objSize - 1);
     const key = objKeys[id];
 
     if (key in result)

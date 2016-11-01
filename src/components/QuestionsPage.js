@@ -1,5 +1,7 @@
-import React from 'react';
+  import React from 'react';
 import _ from 'lodash';
+
+import ColorBox from 'components/ColorBox';
 
 
 class QuestionsPage extends React.Component {
@@ -10,37 +12,55 @@ class QuestionsPage extends React.Component {
     this.props.onAnswer(data);
   }
 
-  onChange(questionEntry, value) {
-    questionEntry.actualAnswer = parseInt(value);
+  onCountsChange(questionEntry, e) {
+    questionEntry.actualAnswer = parseInt(e.target.value);
+  }
+
+  onColorsChange(questionEntry, e) {
+    questionEntry.actualAnswer = e.target.value;
+    this.forceUpdate();
   }
 
   render() {
-    const counts = this.props.questions.counts;
-    const colors = this.props.questions.colors;
+    const counts = this.props.current.questions.counts;
+    const colors = this.props.current.questions.colors;
 
-    let countsMarkup = counts.map((countsEntry) => {
-      let uid = _.uniqueId();
-      let key = 'colorsEntry-' + uid;
+    const schemeId = this.props.current.schemeId;
+    const scheme = this.props.schemes[schemeId];
+
+    const colorIdToColor = colorId => scheme.colors[colorId];
+
+    const countsMarkup = counts.map((countsEntry) => {
+      const uid = _.uniqueId();
+      const key = 'colorsEntry-' + uid;
 
       return (
         <div className="form-group" key={key}>
-          <label htmlFor={key} className="col-sm-2 control-label">
-            {countsEntry.color}
+          <label htmlFor={ key } className="col-sm-2 control-label">
+            <ColorBox color={ colorIdToColor(countsEntry.color) } />
           </label>
           <div className="col-sm-10">
             <input type="number"
                    className="form-control"
-                   id={key}
-                   onChange={this.onChange.bind(this, countsEntry)}
-                   defaultValue="1" />
+                   id={ key }
+                   onChange={ this.onCountsChange.bind(this, countsEntry) }
+                   defaultValue={ countsEntry.actualAnswer } />
           </div>
         </div>
       );
     });
 
-    let colorsMarkup = colors.map((colorsEntry) => {
-      let uid = _.uniqueId();
-      let key = 'colorsEntry-' + uid;
+    const colorsMarkup = colors.map((colorsEntry) => {
+      console.log(colorsEntry.actualAnswer);
+
+      const uid = _.uniqueId();
+      const key = 'colorsEntry-' + uid;
+
+      const options = scheme.colors.map(color =>
+        <option value={ color } key={ color } style={{ backgroundColor: color }}>
+          { color }
+        </option>
+      );
 
       return (
         <div className="form-group" key={key}>
@@ -48,11 +68,14 @@ class QuestionsPage extends React.Component {
             {colorsEntry.name}
           </label>
           <div className="col-sm-10">
-            <input type="number"
-                   className="form-control"
-                   id={key}
-                   onChange={this.onChange.bind(this, colorsEntry)}
-                   defaultValue="1" />
+            <select className="form-control"
+                    id={key}
+                    onChange={this.onColorsChange.bind(this, colorsEntry)}
+                    style={{ backgroundColor: colorsEntry.actualAnswer }}
+                    defaultValue={ colorsEntry.actualAnswer }>
+              <option>---</option>
+              { options }
+            </select>
           </div>
         </div>
       );
@@ -64,18 +87,18 @@ class QuestionsPage extends React.Component {
         <form className="b-input__form form-horizontal">
           <div>
             <h3>Сколько строк было отмечено соответствующими цветами:</h3>
-            {countsMarkup}
+            { countsMarkup }
           </div>
 
           <hr />
 
           <div>
             <h3>Каким цветом были отмечены следующие записи:</h3>
-            {colorsMarkup}
+            { colorsMarkup }
           </div>
 
           <button className="btn btn-lg btn-primary"
-                  onClick={this.onAnswer.bind(this)}>Продолжить</button>
+                  onClick={ this.onAnswer.bind(this) }>Продолжить</button>
         </form>
       </div>
     )

@@ -26,7 +26,8 @@ class App extends React.Component {
       params: {
         colorsPerScheme: 3,
         rowsCount: 20,
-        exposureTime: 5,
+        exposureTime: 1,
+        colorsQuestionsCount: 5,
         repeatCount: 1
       },
       questions: {
@@ -36,7 +37,11 @@ class App extends React.Component {
       current: {
         schemeId: 0,
         iteration: 0,
-        sheet: null
+        sheet: null,
+        questions: {
+          counts: [],
+          colors: []
+        }
       }
     };
 
@@ -71,12 +76,14 @@ class App extends React.Component {
   experimentIteration(iteration, schemeId) {
     const params = this.state.params;
     const sheet = this.generateSheet(params.rowsCount, params.colorsPerScheme);
+    const questions = this.generateQuestions(sheet);
 
     this.setState({
       current: {
         iteration,
         schemeId,
-        sheet: sheet
+        questions,
+        sheet
       }
     });
 
@@ -88,30 +95,36 @@ class App extends React.Component {
   }
 
   answer(data) {
+    this.state.questions.counts = _.concat(
+      this.state.questions.counts,
+      this.state.current.questions.counts);
+
+    this.state.questions.colors = _.concat(
+      this.state.questions.colors,
+      this.state.current.questions.colors);
+
     if (this.state.current.schemeId + 1 < this.state.schemes.length) {
       // new scheme, same iteration
-      ++this.state.current.schemeId;
-      this.setState({ current: this.state.current });
+      this.experimentIteration(
+        this.state.current.iteration,
+        this.state.current.schemeId + 1);
 
-      hashHistory.push('/experiment');
     } else if (this.state.current.iteration + 1 < this.state.repeatCount) {
       // next iteration, first scheme
-      this.state.current.schemeId = 0;
-      ++this.state.current.iteration;
-      this.setState({ current: this.state.current });
+      this.experimentIteration(
+        this.state.current.iteration + 1,
+        0);
 
-      hashHistory.push('/experiment');
     } else {
       // end of experiment
       hashHistory.push('/results');
     }   
   }
 
-  createQuestions() {
+  generateQuestions(sheet) {
     let colorsToCountsMap = {};
     let nameToColorMap = {};
 
-    let sheet = this.props.current.sheet;
     sheet.forEach((row, rowId) => {
       let colorId = row.colorId;
       if (colorId in colorsToCountsMap)
@@ -125,34 +138,28 @@ class App extends React.Component {
 
     // количественные оценки
     let counts = [];
-    _.forEach(colorsToCountsMap, (color, count) => {
+    _.forEach(colorsToCountsMap, (count, color) => {
       counts.push({
         color: color,
-        actualAnswer: null,
+        actualAnswer: 1,
         rightAnswer: count
       });
     });
 
     // качественные оценки
-    let colorsQuestionsCount = 10;
-    let colors = _.map(subsampleObject(nameToColorMap, colorsQuestionsCount), (name, colorId) => {
+    let colorsQuestionsCount = this.state.params.colorsQuestionsCount;
+    let colors = _.map(subsampleObject(nameToColorMap, colorsQuestionsCount), (colorId, name) => {
       return {
         name: name,
-        actualAnswer: null,
+        actualAnswer: 0,
         rightAnswer: colorId
       };
     });
 
-    this.appendQuestions(counts, colors);
-  }
-
-  appendQuestions(counts, colors) {
-    this.state.questions.counts = _.concat(this.state.questions.counts, counts);
-    this.state.questions.colors = _.concat(this.state.questions.colors, colors);
-
-    this.setState({
-      questions: this.state.questions
-    });
+    return {
+      counts,
+      colors
+    };
   }
 
   randomColor() {
@@ -162,7 +169,8 @@ class App extends React.Component {
   addScheme() {
     var scheme = {
       key: _.uniqueId(),
-      colors: _.fill(Array(this.state.params.colorsPerScheme), 0).map(this.randomColor.bind(this))
+      colors: _.fill(Array(this.state.params.colorsPerScheme), 0).map(this.randomColor.bind(this)),
+      score: 0
     };
 
     this.state.schemes.push(scheme);
@@ -256,7 +264,6 @@ class App extends React.Component {
       <QuestionsPage
         {...this.state}
         onAnswer={this.answer.bind(this)}
-        appendQuestions={this.appendQuestions.bind(this)}
       />
     );
   }
