@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChromePicker } from 'react-color';
+import CustomPicker from 'components/CustomPicker';
 
 class ParamsPage extends React.Component {
   onStartExperiment(e) {
@@ -40,21 +40,24 @@ class ParamsPage extends React.Component {
     const schemes = this.props.schemes.map(scheme => {
       let pickers = scheme.colors.map((color, key) =>
         <div className={columnClass} key={key}>
-          <ChromePicker
+          <CustomPicker
             color={color}
-            onChange={this.onColorChanged.bind(this, scheme, key)} />
+            onChange={this.onColorChanged.bind(this, scheme, key)}
+            disableAlpha={true} />
         </div>
       );
 
       return (
-        <div key={scheme.key} className="row">
+        <div key={scheme.key} className="row b-scheme">
           <div className="h3">
             Схема {scheme.key}
             <button
-              className={'btn btn-sm btn-danger pull-right'}
+              className={'btn btn-sm btn-danger b-scheme__remove'}
               onClick={this.onRemoveScheme.bind(this, scheme)}>x</button>
           </div>
-          {pickers}
+          <div className="b-scheme__colors">
+            {pickers}
+          </div>
         </div>
       );
     });

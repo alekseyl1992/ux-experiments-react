@@ -16,3 +16,13 @@
   border: 1px solid black;
   display: inline-block;
 }
+
+.b-scheme {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.b-scheme__remove {
+  position: absolute;
+  right: 3%;
+}
