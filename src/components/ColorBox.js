@@ -6,6 +6,7 @@ class ColorBox extends React.Component {
 
     return (
       <div className="b-color-box"
+        title={color}
         style={{ backgroundColor: color }}
       />
     );

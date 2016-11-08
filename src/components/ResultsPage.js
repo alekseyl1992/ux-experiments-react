@@ -3,26 +3,18 @@ import ColorBox from 'components/ColorBox';
 
 class ResultsPage extends React.Component {
   render() {
-    const schemes = [{
-      key: 0,
-      colors: ['white', 'blue', 'red'],
-      score: 20
-    }, {
-      key: 1,
-      colors: ['yellow', 'green', 'red'],
-      score: 10
-    }];
+    const schemes = this.props.schemes;
 
     const rows = schemes.map((scheme, schemeId) => {
       const colors = scheme.colors.map(color =>
-        <ColorBox color={ color } />
+        <ColorBox color={ color } key={ color } />
       );
 
       return (
-        <tr>
+        <tr key={ schemeId }>
           <th role="row">{ schemeId + 1 }</th>
           <td>{ colors }</td>
-          <td>{ scheme.score }</td>
+          <td>{ Math.floor(scheme.score * 100) }</td>
         </tr>
       );
     });

@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import _ from 'lodash';
 
 import ColorBox from 'components/ColorBox';
@@ -7,9 +7,7 @@ import ColorBox from 'components/ColorBox';
 class QuestionsPage extends React.Component {
   onAnswer(e) {
     e.preventDefault();
-
-    let data = {};
-    this.props.onAnswer(data);
+    this.props.onAnswer();
   }
 
   onCountsChange(questionEntry, e) {
@@ -28,6 +26,8 @@ class QuestionsPage extends React.Component {
     const schemeId = this.props.current.schemeId;
     const scheme = this.props.schemes[schemeId];
 
+    const rowsCount = this.props.params.rowsCount;
+
     const colorIdToColor = colorId => scheme.colors[colorId];
 
     const countsMarkup = counts.map((countsEntry) => {
@@ -43,6 +43,8 @@ class QuestionsPage extends React.Component {
             <input type="number"
                    className="form-control"
                    id={ key }
+                   min="0"
+                   max={rowsCount}
                    onChange={ this.onCountsChange.bind(this, countsEntry) }
                    defaultValue={ countsEntry.actualAnswer } />
           </div>
@@ -51,13 +53,11 @@ class QuestionsPage extends React.Component {
     });
 
     const colorsMarkup = colors.map((colorsEntry) => {
-      console.log(colorsEntry.actualAnswer);
-
       const uid = _.uniqueId();
       const key = 'colorsEntry-' + uid;
 
-      const options = scheme.colors.map(color =>
-        <option value={ color } key={ color } style={{ backgroundColor: color }}>
+      const options = scheme.colors.map((color, colorId) =>
+        <option value={ colorId } key={ color } style={{ backgroundColor: color }}>
           { color }
         </option>
       );
@@ -71,9 +71,8 @@ class QuestionsPage extends React.Component {
             <select className="form-control"
                     id={key}
                     onChange={this.onColorsChange.bind(this, colorsEntry)}
-                    style={{ backgroundColor: colorsEntry.actualAnswer }}
+                    style={{ backgroundColor: colorIdToColor(colorsEntry.actualAnswer) }}
                     defaultValue={ colorsEntry.actualAnswer }>
-              <option>---</option>
               { options }
             </select>
           </div>

@@ -25,14 +25,11 @@ class App extends React.Component {
       schemes: [],
       params: {
         colorsPerScheme: 3,
-        rowsCount: 20,
-        exposureTime: 1,
+        rowsCount: 15,
+        exposureTime: 10,
         colorsQuestionsCount: 5,
+        colorsQuestionsWeight: 0.5,
         repeatCount: 1
-      },
-      questions: {
-        counts: [],
-        colors: []
       },
       current: {
         schemeId: 0,
@@ -63,13 +60,6 @@ class App extends React.Component {
   }
 
   startExperiment() {
-    const questions = {
-      counts: [],
-      colors: []
-    };
-
-    this.setState({ questions });
-
     this.experimentIteration(0, 0);
   }
 
@@ -94,14 +84,19 @@ class App extends React.Component {
     }, this.state.params.exposureTime * 1000);
   }
 
-  answer(data) {
-    this.state.questions.counts = _.concat(
-      this.state.questions.counts,
-      this.state.current.questions.counts);
+  answer() {
+    const schemeId = this.state.current.schemeId;
+    const scheme = this.state.schemes[schemeId];
 
-    this.state.questions.colors = _.concat(
-      this.state.questions.colors,
-      this.state.current.questions.colors);
+    scheme.questions.counts = _.concat(
+      scheme.questions.counts,
+      this.state.current.questions.counts
+    );
+
+    scheme.questions.colors = _.concat(
+      scheme.questions.colors,
+      this.state.current.questions.colors
+    );
 
     if (this.state.current.schemeId + 1 < this.state.schemes.length) {
       // new scheme, same iteration
@@ -117,6 +112,7 @@ class App extends React.Component {
 
     } else {
       // end of experiment
+      this.calcScores(this.state.schemes);
       hashHistory.push('/results');
     }   
   }
@@ -124,6 +120,11 @@ class App extends React.Component {
   generateQuestions(sheet) {
     let colorsToCountsMap = {};
     let nameToColorMap = {};
+
+    // make shure to create question for all colors
+    for (let i = 0; i < this.state.params.colorsPerScheme; ++i) {
+      colorsToCountsMap[i] = 0;
+    }
 
     sheet.forEach((row, rowId) => {
       let colorId = row.colorId;
@@ -163,14 +164,22 @@ class App extends React.Component {
   }
 
   randomColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    let s = Math.floor(Math.random() * 16777215).toString(16);
+    while (s.length != 6)
+      s = '0' + s;
+
+    return '#' + s;
   }
 
   addScheme() {
     var scheme = {
       key: _.uniqueId(),
       colors: _.fill(Array(this.state.params.colorsPerScheme), 0).map(this.randomColor.bind(this)),
-      score: 0
+      score: 0,
+      questions: {
+        counts: [],
+        colors: []
+      }
     };
 
     this.state.schemes.push(scheme);
@@ -236,6 +245,26 @@ class App extends React.Component {
     }
 
     return data;
+  }
+
+  calcScores(schemes) {
+    const rowsCount = this.state.params.rowsCount;
+
+    schemes.forEach(scheme => {
+      const countsError = scheme.questions.counts.reduce((acc, q) => {
+        return acc + Math.abs(q.actualAnswer - q.rightAnswer) / rowsCount;
+      }, 0) / scheme.colors.length;
+
+      const colorsError = scheme.questions.colors.reduce((acc, q) => {
+        return acc + (q.actualAnswer != q.rightAnswer);
+      }, 0) / scheme.questions.colors.length;
+
+      const colorsQuestionsWeight = this.state.params.colorsQuestionsWeight;
+      scheme.score = (1 - colorsQuestionsWeight) * (1 - countsError) +
+        colorsQuestionsWeight * (1 - colorsError);
+    });
+
+    this.setState({ schemes });
   }
 
   renderParamsPage() {

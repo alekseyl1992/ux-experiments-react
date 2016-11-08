@@ -28,7 +28,9 @@ class ParamsPage extends React.Component {
       colorsPerScheme: parseInt(this.refs.colorsPerScheme.value),
       rowsCount: parseInt(this.refs.rowsCount.value),
       exposureTime: parseFloat(this.refs.exposureTime.value),
-      repeatCount: parseFloat(this.refs.repeatCount.value)
+      colorsQuestionsCount: parseInt(this.refs.colorsQuestionsCount.value),
+      colorsQuestionsWeight: parseFloat(this.refs.colorsQuestionsWeight.value),
+      repeatCount: parseInt(this.refs.repeatCount.value),
     });
   }
 
@@ -94,6 +96,33 @@ class ParamsPage extends React.Component {
                      className="form-control"
                      id="exposureTime"
                      defaultValue={this.props.params.exposureTime} />
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="colorsQuestionsCount" className="col-sm-2 control-label">
+              Количество качественных вопросов
+            </label>
+            <div className="col-sm-10">
+              <input ref="colorsQuestionsCount"
+                     type="number"
+                     className="form-control"
+                     id="colorsQuestionsCount"
+                     defaultValue={this.props.params.colorsQuestionsCount} />
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="colorsQuestionsWeight" className="col-sm-2 control-label">
+              Вес качественных вопросов
+            </label>
+            <div className="col-sm-10">
+              <input ref="colorsQuestionsWeight"
+                     type="number"
+                     className="form-control"
+                     id="colorsQuestionsWeight"
+                     min="0"
+                     max="1"
+                     step="0.1"
+                     defaultValue={this.props.params.colorsQuestionsWeight} />
             </div>
           </div>
           <div className="form-group">
